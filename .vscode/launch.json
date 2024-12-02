@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "C#: <project-name> Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/<relative-path-to-project-folder><project-name>.csproj"
+        },
+        {
+            "name": "Cake: Debug Script (.NET Tool)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet-cake",
+            "windows": {
+                "program": "dotnet-cake.exe"
+            },
+            "args": [
+                "${workspaceRoot}/build.cake",
+                "--debug",
+                "--verbosity=diagnostic"
+            ],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "externalConsole": false,
+            "justMyCode": false
+        },
+    {
+        "name": ".NET Core Attach",
+        "type": "coreclr",
+        "request": "attach"
+    }
+    ]
+}
