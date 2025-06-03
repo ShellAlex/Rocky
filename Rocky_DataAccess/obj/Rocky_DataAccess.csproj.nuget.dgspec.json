@@ -1,0 +1,239 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/win/Projects/dotnet/Rocky_cpy/Rocky_DataAccess/Rocky_DataAccess.csproj": {}
+  },
+  "projects": {
+    "/home/win/Projects/dotnet/Rocky_cpy/Rocky_DataAccess/Rocky_DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_DataAccess/Rocky_DataAccess.csproj",
+        "projectName": "Rocky_DataAccess",
+        "projectPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_DataAccess/Rocky_DataAccess.csproj",
+        "packagesPath": "/home/win/.nuget/packages/",
+        "outputPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_DataAccess/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/win/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/Rocky_Models.csproj": {
+                "projectPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/Rocky_Models.csproj"
+              },
+              "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/Rocky_Utility.csproj": {
+                "projectPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/Rocky_Utility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/Rocky_Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/Rocky_Models.csproj",
+        "projectName": "Rocky_Models",
+        "projectPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/Rocky_Models.csproj",
+        "packagesPath": "/home/win/.nuget/packages/",
+        "outputPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/win/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/Rocky_Utility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/Rocky_Utility.csproj",
+        "projectName": "Rocky_Utility",
+        "projectPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/Rocky_Utility.csproj",
+        "packagesPath": "/home/win/.nuget/packages/",
+        "outputPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/win/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Google.Apis.Gmail.v1": {
+              "target": "Package",
+              "version": "[1.68.0.3427, )"
+            },
+            "Google.Apis.Plus.v1": {
+              "target": "Package",
+              "version": "[1.49.0.1627, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

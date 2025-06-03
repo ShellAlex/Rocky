@@ -1,0 +1,12 @@
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/bin/Debug/net8.0/Rocky_Utility.deps.json
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/bin/Debug/net8.0/Rocky_Utility.dll
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/bin/Debug/net8.0/Rocky_Utility.pdb
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/Rocky_Utility.csproj.AssemblyReference.cache
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/Rocky_Utility.GeneratedMSBuildEditorConfig.editorconfig
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/Rocky_Utility.AssemblyInfoInputs.cache
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/Rocky_Utility.AssemblyInfo.cs
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/Rocky_Utility.csproj.CoreCompileInputs.cache
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/Rocky_Utility.dll
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/refint/Rocky_Utility.dll
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/Rocky_Utility.pdb
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/obj/Debug/net8.0/ref/Rocky_Utility.dll
