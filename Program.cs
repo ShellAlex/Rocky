@@ -30,8 +30,11 @@ builder.Services.AddSession(Options =>
     Options.IOTimeout = TimeSpan.FromMinutes(30); 
 });
 builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+builder.Services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
 builder.Services.AddScoped<IApplicationTypeRepository,ApplicationTypeRepository>();
 builder.Services.AddScoped<IProductRepository,ProductRepository>();
+builder.Services.AddScoped<IInquiryHeaderRepository,InquiryHeaderRepository>();
+builder.Services.AddScoped<IInquiryDetailRepository,InquiryDetailRepository>();
 
 builder.Services.AddControllersWithViews();
 

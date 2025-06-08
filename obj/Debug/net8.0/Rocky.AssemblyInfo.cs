@@ -11,6 +11,5 @@ using System;
 using System.Reflection;
 
 
-
 // Создано классом WriteCodeFragment MSBuild.
 

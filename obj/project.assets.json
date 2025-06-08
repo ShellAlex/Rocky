@@ -9257,7 +9257,8 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Templating >= 8.0.0",
       "Microsoft.VisualStudio.Web.CodeGenerators.Mvc >= 8.0.0",
       "Rocky_DataAccess >= 1.0.0",
-      "Rocky_Models >= 1.0.0"
+      "Rocky_Models >= 1.0.0",
+      "Rocky_Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9290,6 +9291,9 @@
             },
             "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/Rocky_Models.csproj": {
               "projectPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/Rocky_Models.csproj"
+            },
+            "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/Rocky_Utility.csproj": {
+              "projectPath": "/home/win/Projects/dotnet/Rocky_cpy/Rocky_Utility/Rocky_Utility.csproj"
             }
           }
         }

@@ -1,21 +1,28 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Rocky_DataAccess.Repository.IRepository;
 using Rocky_Models;
 using Rocky_Utility;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+using Rocky_DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace Rocky_DataAccess.Repository
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {
         private readonly ApplicationDbContext _db;
-        public ProductRepository(ApplicationDbContext db) :base(db)
+        public  ProductRepository(ApplicationDbContext db) :base(db)
         {
             _db = db;
         }
+
+
+       
 
         public IEnumerable<SelectListItem> GetAllDropdownList(string obj)
         {
@@ -27,7 +34,7 @@ namespace Rocky_DataAccess.Repository
                 });
             }
             if(obj == WC.AppllicationTypeName){
-                return _db.Category.Select(i=> new SelectListItem
+                return _db.ApplicationType.Select(i=> new SelectListItem
                 {
                     Text = i.Name,
                     Value=i.Id.ToString()

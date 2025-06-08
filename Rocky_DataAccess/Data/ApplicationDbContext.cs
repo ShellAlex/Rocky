@@ -21,10 +21,10 @@ public class ApplicationDbContext : IdentityDbContext
 
     public DbSet<Product> Product { get; set; }
     public DbSet<ApplicationUser> ApplicationUser { get; set; }
-    public DbSet<InquiryHeader> InquiryHeader { get; set; }
-    public DbSet<InquiryDetail> InquiryDetail { get; set; }
 
-    
+    public DbSet<InquiryDetail> InquiryDetail { get; set; }
+    public DbSet<InquiryHeader> InquiryHeader { get; set; }    
+
     //public IEnumerable<Article> Article { get; internal set; }
     // public DbSet<Models.Math> Math { get; set; }
 

@@ -1,9 +1,11 @@
 using System.ComponentModel;
 using System.IO;
 using System.Security.AccessControl;
+using System.Collections.Generic;
 using System.Threading;
 using System.Net;
 using System;
+using System.Linq;
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -138,7 +140,7 @@ namespace Rocky.Controllers
                 return NotFound();
             }
 
-            Product product = _prodRepo.FirstOrDeault(u=>u.Id==id,includeProperties:"Category,ApplicationType");
+            Product product = _prodRepo.FirstOrDefault(u=>u.Id==id,includeProperties:"Category,ApplicationType");
             //product.Category = _db.Category.Find(product.CategoryId);
             //var obj =_db.Product.Find(id);
             if(product==null){

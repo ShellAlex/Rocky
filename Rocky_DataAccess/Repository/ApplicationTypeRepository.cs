@@ -16,7 +16,7 @@ namespace Rocky_DataAccess.Repository
         }
         public void Update(ApplicationType obj)
         {
-            var objFromDb = base.FirstOrDeault(u=>u.Id == obj.Id);
+            var objFromDb = base.FirstOrDefault(u=>u.Id == obj.Id);
             if(objFromDb !=null){
                 objFromDb.Name = obj.Name;
             }

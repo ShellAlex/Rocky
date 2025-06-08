@@ -7,6 +7,7 @@ using Rocky_Models;
 using Rocky_Models.ViewModels;
 using Rocky_Utility;
 using Rocky.Utility;
+using Rocky_DataAccess.Repository.IRepository;
 
 
 
@@ -15,18 +16,22 @@ namespace Rocky.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly ApplicationDbContext _db;
-    public HomeController(ILogger<HomeController> logger,ApplicationDbContext db)
+    private readonly IProductRepository _prodRepo;
+    private readonly ICategoryRepository _catRepo;
+
+    public HomeController(ILogger<HomeController> logger,IProductRepository prodRepo,
+    ICategoryRepository catRepo)
     {
         _logger = logger;
-        _db = db;
+        _prodRepo = prodRepo;
+        _catRepo = catRepo;
     }
 
     public IActionResult Index()
     {
         HomeVM homeVm = new HomeVM(){
-            Products = _db.Product.Include(u=>u.Category).Include(u=>u.ApplicationType),
-            Categories=_db.Category
+            Products = _prodRepo.GetAll(includeProperties:"Category,ApplicationType"),
+            Categories=_catRepo.GetAll()
         };
         return View(homeVm);
     }
@@ -42,8 +47,7 @@ public class HomeController : Controller
         }
 
         DetailsVM DetailsVM = new DetailsVM(){
-                Product = _db.Product.Include(u=>u.Category).Include(u=>u.ApplicationType)
-                .Where(u=>u.Id==id).FirstOrDefault(),
+                Product = _prodRepo.FirstOrDefault(u=>u.Id==id,includeProperties:"Category,ApplicationType"),
                 ExistsInCart=false
         };
 

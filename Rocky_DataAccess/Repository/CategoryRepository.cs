@@ -16,7 +16,7 @@ namespace Rocky_DataAccess.Repository
         }
         public void Update(Category obj)
         {
-            var objFromDb = base.FirstOrDeault(u=>u.Id == obj.Id);
+            var objFromDb = base.FirstOrDefault(u=>u.Id == obj.Id);
             if(objFromDb !=null){
                 objFromDb.Name = obj.Name;
                 objFromDb.DisplayOrder = obj.DisplayOrder;

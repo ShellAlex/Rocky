@@ -29,23 +29,30 @@ namespace Rocky_DataAccess.Repository
             return dbSet.Find(id);
         }
 
-        public T FirstOrDeault(Expression<Func<T, bool>> filter = null, string includeProperties = null, bool isTracking = true)
-        {
-            IQueryable<T> query = dbSet;
-            if(filter!=null){
-                query = query.Where(filter);
-            }
-            if(includeProperties!=null){
-                foreach(var includeProp in includeProperties.Split(new char[]{','},StringSplitOptions.RemoveEmptyEntries)){
-                    query = query.Include(includeProp);
-                }
-            }
+
+
+
+        public T FirstOrDefault(Expression<Func<T, bool>> filter = null, string includeProperties = null, bool isTracking = true)
+        {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
             
-            if(!isTracking){
-                query = query.AsNoTracking();
-            }
-            return query.FirstOrDefault();
+            IQueryable<T> query = dbSet;
+                if(filter!=null){
+                    query = query.Where(filter);
+                }
+                if(includeProperties!=null){
+                    foreach(var includeProp in includeProperties.Split(new char[]{','},StringSplitOptions.RemoveEmptyEntries)){
+                        query = query.Include(includeProp);
+                    }
+                }
+                
+                if(!isTracking){
+                    query = query.AsNoTracking();
+                }
+                return query.FirstOrDefault();
+
         }
+
+        
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null, bool isTracking = true)
         {

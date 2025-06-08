@@ -53,6 +53,7 @@
           "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "8.0.0",
           "Rocky_DataAccess": "1.0.0",
           "Rocky_Models": "1.0.0",
+          "Rocky_Utility": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery.Reference": "8.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "8.0.0.0",
           "Microsoft.AspNetCore.Authentication.BearerToken": "8.0.0.0",
@@ -2840,6 +2841,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "8.0.0",
           "Rocky_Models": "1.0.0",
           "Rocky_Utility": "1.0.0"
         },

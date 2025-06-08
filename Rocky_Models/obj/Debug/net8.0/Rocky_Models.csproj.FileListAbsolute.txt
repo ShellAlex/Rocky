@@ -1,11 +1,12 @@
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/bin/Debug/net8.0/Rocky_Models.deps.json
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/bin/Debug/net8.0/Rocky_Models.dll
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/bin/Debug/net8.0/Rocky_Models.pdb
 /home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/Rocky_Models.csproj.AssemblyReference.cache
 /home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/Rocky_Models.GeneratedMSBuildEditorConfig.editorconfig
 /home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/Rocky_Models.AssemblyInfoInputs.cache
 /home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/Rocky_Models.AssemblyInfo.cs
 /home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/Rocky_Models.csproj.CoreCompileInputs.cache
-/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/bin/Debug/net8.0/Rocky_Models.deps.json
-/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/bin/Debug/net8.0/Rocky_Models.dll
-/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/bin/Debug/net8.0/Rocky_Models.pdb
+/home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/Rocky_Models.sourcelink.json
 /home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/Rocky_Models.dll
 /home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/refint/Rocky_Models.dll
 /home/win/Projects/dotnet/Rocky_cpy/Rocky_Models/obj/Debug/net8.0/Rocky_Models.pdb
