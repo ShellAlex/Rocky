@@ -54,8 +54,8 @@ namespace Rocky_Utility
                 );
             }
         
-         var externalIP = (new WebClient()).DownloadString("https://ifconfig.me");
-                externalIP = (new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"))
+            var externalIP = (new WebClient()).DownloadString("https://ifconfig.me");
+            externalIP = (new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"))
                       .Matches(externalIP)[0].ToString();
         
         

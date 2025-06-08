@@ -10,7 +10,14 @@
 using System;
 using System.Reflection;
 
-
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Rocky_Utility")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07ee78f6aae5d8a25cb7fbb1f26cb4ffc1076a52")]
+[assembly: System.Reflection.AssemblyProductAttribute("Rocky_Utility")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Rocky_Utility")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
 

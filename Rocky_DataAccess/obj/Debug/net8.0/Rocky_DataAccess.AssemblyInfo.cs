@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Rocky_DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b0d3868a2adc62067426630ad1cc883e881dc4e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07ee78f6aae5d8a25cb7fbb1f26cb4ffc1076a52")]
 [assembly: System.Reflection.AssemblyProductAttribute("Rocky_DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Rocky_DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
