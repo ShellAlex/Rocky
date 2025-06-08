@@ -1,0 +1,1 @@
+//"DefaultConnection": "Server=.;Database=Rocky;Trusted_Connection=true;MultipleActiveResultsSets=True"
