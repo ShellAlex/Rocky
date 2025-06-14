@@ -6,9 +6,15 @@ using Rocky.Utility;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Rocky_DataAccess.Repository.IRepository;
 using Rocky_DataAccess.Repository;
-
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File("Logs/efcore-log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
 
 // Add services to the container.
 builder.Services.AddHttpContextAccessor();
@@ -39,10 +45,11 @@ builder.Services.AddScoped<IInquiryDetailRepository,InquiryDetailRepository>();
 builder.Services.AddControllersWithViews();
 
 string connstring = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-options.UseSqlite(
-    connstring
-));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>{
+        options.UseSqlite(connstring);
+        options.EnableSensitiveDataLogging();
+        options.LogTo(Log.Logger.Information, LogLevel.Information);
+});
 
 
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
