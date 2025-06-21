@@ -7,6 +7,10 @@ namespace Rocky_Models
 {
     public class Product
     {
+        public Product()
+        {
+            TempSqFt =1;   
+        }
         [Key]
         [AllowNull]
         public int Id { get; set; }
@@ -39,5 +43,9 @@ namespace Rocky_Models
         [ValidateNever]
         [ForeignKey("ApplicationTypeId")]
         public virtual ApplicationType ApplicationType { get; set; }
+
+        [NotMapped]
+        [Range(1,10000)]
+        public int TempSqFt { get; set; }
     }
 }

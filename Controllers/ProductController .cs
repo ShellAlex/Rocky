@@ -73,6 +73,7 @@ namespace Rocky.Controllers
                 if(productVM.Product==null){
                     return NotFound();
                 }
+                TempData[WC.Success]="Item add to cart succesfully";
                 return View(productVM);
             }
         }
@@ -125,11 +126,12 @@ namespace Rocky.Controllers
 
               }
               _prodRepo.Save();
+              TempData[WC.Success]="Item add to cart succesfully 1";
               return RedirectToAction("Index");
             }
             productVM.CategorySelectList = _prodRepo.GetAllDropdownList(WC.CategoryName);
             productVM.ApplicationTypeSelectList = _prodRepo.GetAllDropdownList(WC.AppllicationTypeName);
-
+            TempData[WC.Success]="Item add to cart succesfully 2";
             return View(productVM);
         }
 
@@ -146,6 +148,7 @@ namespace Rocky.Controllers
             if(product==null){
                 return NotFound();
             }
+            TempData[WC.Success]="Item deleted succesfully";
             return View(product);
         }
 
@@ -167,6 +170,7 @@ namespace Rocky.Controllers
 
             _prodRepo.Remove(obj);
             _prodRepo.Save();
+            TempData[WC.Success]="Item deleted succesfully 2";
             return RedirectToAction("Index");
         }
 

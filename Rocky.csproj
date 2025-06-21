@@ -8,6 +8,7 @@
     <PackageReference Include="Google.Apis.Gmail.v1" Version="1.68.0.3427" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
@@ -30,8 +31,7 @@
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
-   
-    <ProjectReference Include="Rocky_DataAccess\Rocky_DataAccess.csproj" />
+<ProjectReference Include="Rocky_DataAccess\Rocky_DataAccess.csproj" />
     <ProjectReference Include="Rocky_Models\Rocky_Models.csproj" />
     <ProjectReference Include="Rocky_Utility\Rocky_Utility.csproj" />
   </ItemGroup>
