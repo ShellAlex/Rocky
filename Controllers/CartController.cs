@@ -16,6 +16,8 @@ using Rocky_Models.ViewModels;
 using Rocky_Utility;
 using Rocky.Utility;
 using Rocky_DataAccess.Repository.IRepository;
+using Rocky_Utility.BrainTree;
+using Braintree;
 
 namespace Rocky.Controllers
 {
@@ -29,20 +31,29 @@ namespace Rocky.Controllers
         private readonly IProductRepository _prodRepo;
         private readonly IInquiryDetailRepository _inqDRepo;
 
-
+        private readonly IOrderHeaderRepository _orderHRepo;
+        private readonly IOrderDetailRepository _orderDRepo;
+        private readonly IBrainTreeGate _brain;
         
         public CartController(IWebHostEnvironment webHostEnvironment,IEmailSender emailSender,
         IApplicationUserRepository userRepo,IProductRepository prodRepo,
-        IInquiryHeaderRepository inqHRepo,IInquiryDetailRepository inqDRepo)
+        IInquiryHeaderRepository inqHRepo,IInquiryDetailRepository inqDRepo,
+        IOrderHeaderRepository orderHRepo, IOrderDetailRepository orderDRepo,
+        IBrainTreeGate brain
+        )
         {
-           
+            _webHostEnvironment = webHostEnvironment;
+            _emailSender = emailSender;
+            
             _userRepo = userRepo;
             _prodRepo = prodRepo;
             _inqHRepo = inqHRepo;
             _inqDRepo = inqDRepo;
-            _webHostEnvironment = webHostEnvironment;
-            _emailSender = emailSender;
-        
+            _orderDRepo = orderDRepo;
+            _orderHRepo = orderHRepo;
+            _brain = brain;
+
+            
         }
         [BindProperty]
         public ProductUserVM ProductUserVM { get; set; }
@@ -101,6 +112,10 @@ namespace Rocky.Controllers
                 }else{
                     applicationUser = new ApplicationUser();
                 }
+                    var gateway = _brain.GetGateway();
+                    var clientToken = gateway.ClientToken.Generate();
+                    ViewBag.ClientToken = clientToken;
+
                 }else{
 
                     //var userId = User.FindFirstValue(ClaimTypes.Name);
@@ -142,10 +157,71 @@ namespace Rocky.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Summary")]
-        public async Task <IActionResult> SummaryPost(ProductUserVM ProductUserVM)
+        public async Task <IActionResult> SummaryPost(IFormCollection collection, ProductUserVM ProductUserVM)
         {
             var claimsIdentity =(ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            if(User.IsInRole(WC.AdminRole)){
+                //we need to create an order
+                // var orderTotal = 0.0;
+                // foreach(Product prod in ProductUserVM.ProductList){
+                //     orderTotal+= prod.Price*prod.TempSqFt;
+                // }
+                OrderHeader orderHeader = new OrderHeader(){
+                    CreatedByUserId = claim.Value,
+                    FinalOrderTotal = ProductUserVM.ProductList.Sum(x=>x.TempSqFt*x.Price),
+                    City = ProductUserVM.ApplicationUser.City,
+                    StreetAddress = ProductUserVM.ApplicationUser.StreetAddress,
+                    State = ProductUserVM.ApplicationUser.State,
+                    PostalCode = ProductUserVM.ApplicationUser.PostalCode,
+                    FullName = ProductUserVM.ApplicationUser.FullName,
+                    Email = ProductUserVM.ApplicationUser.Email,
+                    PhoneNumber = ProductUserVM.ApplicationUser.PhoneNumber,
+                    OrderDate = DateTime.Now,
+                    OrderStatus = WC.StatusPending
+                };
+
+                _orderHRepo.Add(orderHeader);
+                _orderHRepo.Save();
+
+                foreach(var prod in ProductUserVM.ProductList){
+                OrderDetail orderDetail = new OrderDetail(){
+                    OrderHeaderId = orderHeader.Id,
+                    PricePerSqFt = prod.Price,
+                    Sqft = prod.TempSqFt,
+                    ProductId = prod.Id
+                };
+                _orderDRepo.Add(orderDetail);
+                
+            }
+                _orderDRepo.Save();
+                string nonceFromTheClient = collection["payment_method_nonce"];
+
+
+                var request = new TransactionRequest
+                        {
+                            Amount =Convert.ToDecimal(orderHeader.FinalOrderTotal),
+                            PaymentMethodNonce = nonceFromTheClient,
+                            OrderId = orderHeader.Id.ToString(),
+                            
+                            Options = new TransactionOptionsRequest
+                            {
+                            SubmitForSettlement = true
+                            }
+                        };
+                var gateway = _brain.GetGateway();
+                Result<Transaction> result = gateway.Transaction.Sale(request);
+                if(result.Target.ProcessorResponseText=="Approved"){
+                    orderHeader.TransactionId = result.Target.Id;
+                    orderHeader.OrderStatus = WC.StatusApproved;
+                }else{
+                    orderHeader.OrderStatus = WC.StatusCancelled;
+                }
+                _orderHRepo.Save();
+         
+            return RedirectToAction(nameof(InquiryConfirmation),new {id=orderHeader.Id});
+            }else{
+                //we need to create an inquuiry
 
             var PathToTemplate = _webHostEnvironment.WebRootPath + Path.DirectorySeparatorChar.ToString()
                 +"templates" + Path.DirectorySeparatorChar.ToString()+
@@ -194,18 +270,22 @@ namespace Rocky.Controllers
                     ProductId = prod.Id
                 };
                 _inqDRepo.Add(inquiryDetail);
-                _inqDRepo.Save();
+               
+            }
+             _inqDRepo.Save();
+            TempData[WC.Success]="Inquiry confirmed succesfully";
             }
 
-            TempData[WC.Success]="Inquiry confirmed succesfully";
+
+
             return RedirectToAction(nameof(InquiryConfirmation));
         }
 
-        public IActionResult InquiryConfirmation()
+        public IActionResult InquiryConfirmation(int id=0)
         {
-            
+            OrderHeader orderHeader = _orderHRepo.FirstOrDefault(u=>u.Id==id);
             HttpContext.Session.Clear();
-            return View();
+            return View(orderHeader);
         }
 
         public IActionResult Remove(int id)
@@ -221,6 +301,14 @@ namespace Rocky.Controllers
             HttpContext.Session.Set(Rocky_Utility.WC.SessionCart, shoppingCartList);
             TempData[WC.Success]="Removed succesfully";
             return RedirectToAction(nameof(Index));
+        }
+
+
+        public IActionResult Clear()
+        {
+            
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index","Home");
         }
 
         [HttpPost]

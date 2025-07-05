@@ -1,0 +1,61 @@
+2025-06-25 10:50:23.116 +03:00 [INF] warn: 25.06.2025 10:50:23.109 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-25 10:53:17.774 +03:00 [INF] warn: 25.06.2025 10:53:17.763 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-25 10:53:18.633 +03:00 [INF] info: 25.06.2025 10:53:18.633 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-06-25 10:53:18.651 +03:00 [INF] info: 25.06.2025 10:53:18.651 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-06-25 10:53:18.685 +03:00 [INF] info: 25.06.2025 10:53:18.685 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+2025-06-25 10:53:18.772 +03:00 [INF] info: 25.06.2025 10:53:18.772 RelationalEventId.MigrationApplying[20402] (Microsoft.EntityFrameworkCore.Migrations) 
+      Applying migration '20250625075029_PushOrderHeaderAndDetailsToDb'.
+2025-06-25 10:53:18.972 +03:00 [INF] info: 25.06.2025 10:53:18.972 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "OrderHeader" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_OrderHeader" PRIMARY KEY AUTOINCREMENT,
+          "CreatedByUserId" TEXT NOT NULL,
+          "OrderDate" TEXT NOT NULL,
+          "ShippingDate" TEXT NOT NULL,
+          "FinalOrderTotal" REAL NOT NULL,
+          "OrderStatus" TEXT NOT NULL,
+          "PaymentDate" TEXT NOT NULL,
+          "TransactionId" TEXT NOT NULL,
+          "PhoneNumber" TEXT NOT NULL,
+          "StreetAddress" TEXT NOT NULL,
+          "City" TEXT NOT NULL,
+          "State" TEXT NOT NULL,
+          "PostalCode" TEXT NOT NULL,
+          "FullName" TEXT NOT NULL,
+          "Email" TEXT NOT NULL,
+          CONSTRAINT "FK_OrderHeader_AspNetUsers_CreatedByUserId" FOREIGN KEY ("CreatedByUserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+      );
+2025-06-25 10:53:18.973 +03:00 [INF] info: 25.06.2025 10:53:18.973 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "OrderDetail" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_OrderDetail" PRIMARY KEY AUTOINCREMENT,
+          "OrderHeaderId" INTEGER NOT NULL,
+          "ProductId" INTEGER NOT NULL,
+          "Sqft" INTEGER NOT NULL,
+          "PricePerSqFt" REAL NOT NULL,
+          CONSTRAINT "FK_OrderDetail_OrderHeader_OrderHeaderId" FOREIGN KEY ("OrderHeaderId") REFERENCES "OrderHeader" ("Id") ON DELETE CASCADE,
+          CONSTRAINT "FK_OrderDetail_Product_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Product" ("Id") ON DELETE CASCADE
+      );
+2025-06-25 10:53:18.973 +03:00 [INF] info: 25.06.2025 10:53:18.973 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_OrderDetail_OrderHeaderId" ON "OrderDetail" ("OrderHeaderId");
+2025-06-25 10:53:18.974 +03:00 [INF] info: 25.06.2025 10:53:18.974 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_OrderDetail_ProductId" ON "OrderDetail" ("ProductId");
+2025-06-25 10:53:18.974 +03:00 [INF] info: 25.06.2025 10:53:18.974 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_OrderHeader_CreatedByUserId" ON "OrderHeader" ("CreatedByUserId");
+2025-06-25 10:53:18.975 +03:00 [INF] info: 25.06.2025 10:53:18.975 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20250625075029_PushOrderHeaderAndDetailsToDb', '8.0.0');

@@ -1,0 +1,2076 @@
+2025-06-28 14:34:28.017 +03:00 [INF] warn: 28.06.2025 14:34:27.996 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 14:34:30.782 +03:00 [INF] info: 28.06.2025 14:34:30.782 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (49ms) [Parameters=[@__p_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Discriminator", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a"."FullName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."Id" = @__p_0
+      LIMIT 1
+2025-06-28 14:34:31.601 +03:00 [INF] info: 28.06.2025 14:34:31.601 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (46ms) [Parameters=[@__user_Id_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+      FROM "AspNetUserClaims" AS "a"
+      WHERE "a"."UserId" = @__user_Id_0
+2025-06-28 14:34:31.867 +03:00 [INF] info: 28.06.2025 14:34:31.867 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (31ms) [Parameters=[@__userId_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a0"."Name"
+      FROM "AspNetUserRoles" AS "a"
+      INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+      WHERE "a"."UserId" = @__userId_0
+2025-06-28 14:34:32.069 +03:00 [INF] info: 28.06.2025 14:34:32.069 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='ADMIN' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+      FROM "AspNetRoles" AS "a"
+      WHERE "a"."NormalizedName" = @__normalizedName_0
+      LIMIT 1
+2025-06-28 14:34:32.278 +03:00 [INF] info: 28.06.2025 14:34:32.277 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__role_Id_0='0dcc58d7-44ac-4c7c-bd1f-a2f3424effb7' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."ClaimType", "a"."ClaimValue"
+      FROM "AspNetRoleClaims" AS "a"
+      WHERE "a"."RoleId" = @__role_Id_0
+2025-06-28 14:34:32.792 +03:00 [INF] info: 28.06.2025 14:34:32.792 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 14:34:33.543 +03:00 [INF] info: 28.06.2025 14:34:33.543 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 14:34:42.128 +03:00 [INF] info: 28.06.2025 14:34:42.128 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 14:34:47.171 +03:00 [INF] info: 28.06.2025 14:34:47.171 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 14:34:47.307 +03:00 [INF] info: 28.06.2025 14:34:47.307 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 14:34:50.334 +03:00 [INF] info: 28.06.2025 14:34:50.334 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 14:34:57.979 +03:00 [INF] info: 28.06.2025 14:34:57.979 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 14:34:58.062 +03:00 [INF] info: 28.06.2025 14:34:58.061 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 14:35:01.724 +03:00 [INF] info: 28.06.2025 14:35:01.724 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5,6]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 14:35:02.250 +03:00 [INF] info: 28.06.2025 14:35:02.250 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5,6]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 14:35:06.490 +03:00 [INF] info: 28.06.2025 14:35:06.490 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5,6]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 14:35:06.574 +03:00 [INF] info: 28.06.2025 14:35:06.574 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 14:35:06.724 +03:00 [INF] info: 28.06.2025 14:35:06.724 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 14:35:16.825 +03:00 [INF] info: 28.06.2025 14:35:16.825 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (27ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='7315', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T14:35:15.2649558+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 14:35:17.100 +03:00 [INF] info: 28.06.2025 14:35:17.100 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='2', @p1='435', @p2='5', @p3='14'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 14:35:17.143 +03:00 [INF] info: 28.06.2025 14:35:17.143 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@p0='2', @p1='245', @p2='6', @p3='5'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 14:41:34.068 +03:00 [INF] info: 28.06.2025 14:41:34.068 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 14:41:34.095 +03:00 [INF] info: 28.06.2025 14:41:34.095 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 15:03:28.035 +03:00 [INF] warn: 28.06.2025 15:03:28.028 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 15:03:28.993 +03:00 [INF] info: 28.06.2025 15:03:28.993 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 15:03:29.175 +03:00 [INF] info: 28.06.2025 15:03:29.175 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 15:03:33.354 +03:00 [INF] info: 28.06.2025 15:03:33.354 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 15:03:35.535 +03:00 [INF] info: 28.06.2025 15:03:35.535 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 15:03:35.568 +03:00 [INF] info: 28.06.2025 15:03:35.568 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 15:03:37.594 +03:00 [INF] info: 28.06.2025 15:03:37.594 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='9'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 15:03:38.922 +03:00 [INF] info: 28.06.2025 15:03:38.922 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 15:03:38.950 +03:00 [INF] info: 28.06.2025 15:03:38.949 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 15:03:40.404 +03:00 [INF] info: 28.06.2025 15:03:40.404 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__prodInCart_0='[5,9]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 15:03:42.831 +03:00 [INF] info: 28.06.2025 15:03:42.831 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5,9]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 15:03:42.857 +03:00 [INF] info: 28.06.2025 15:03:42.857 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 15:03:42.875 +03:00 [INF] info: 28.06.2025 15:03:42.875 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='9'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 15:03:48.986 +03:00 [INF] info: 28.06.2025 15:03:48.986 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='935', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T15:03:48.7225065+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 15:03:49.108 +03:00 [INF] info: 28.06.2025 15:03:49.108 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@p0='3', @p1='435', @p2='5', @p3='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 15:03:49.139 +03:00 [INF] info: 28.06.2025 15:03:49.139 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='3', @p1='500', @p2='9', @p3='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 15:03:49.192 +03:00 [INF] info: 28.06.2025 15:03:49.192 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='3'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:06:09.560 +03:00 [INF] warn: 28.06.2025 17:06:09.552 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 17:06:11.795 +03:00 [INF] info: 28.06.2025 17:06:11.795 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (171ms) [Parameters=[@__p_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Discriminator", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a"."FullName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."Id" = @__p_0
+      LIMIT 1
+2025-06-28 17:06:12.258 +03:00 [INF] info: 28.06.2025 17:06:12.258 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__user_Id_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+      FROM "AspNetUserClaims" AS "a"
+      WHERE "a"."UserId" = @__user_Id_0
+2025-06-28 17:06:12.355 +03:00 [INF] info: 28.06.2025 17:06:12.355 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__userId_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a0"."Name"
+      FROM "AspNetUserRoles" AS "a"
+      INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+      WHERE "a"."UserId" = @__userId_0
+2025-06-28 17:06:12.413 +03:00 [INF] info: 28.06.2025 17:06:12.413 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='ADMIN' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+      FROM "AspNetRoles" AS "a"
+      WHERE "a"."NormalizedName" = @__normalizedName_0
+      LIMIT 1
+2025-06-28 17:06:12.511 +03:00 [INF] info: 28.06.2025 17:06:12.511 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__role_Id_0='0dcc58d7-44ac-4c7c-bd1f-a2f3424effb7' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."ClaimType", "a"."ClaimValue"
+      FROM "AspNetRoleClaims" AS "a"
+      WHERE "a"."RoleId" = @__role_Id_0
+2025-06-28 17:06:12.788 +03:00 [INF] info: 28.06.2025 17:06:12.788 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:06:12.978 +03:00 [INF] info: 28.06.2025 17:06:12.978 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:06:20.336 +03:00 [INF] info: 28.06.2025 17:06:20.336 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__id_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:06:23.237 +03:00 [INF] info: 28.06.2025 17:06:23.237 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:06:23.264 +03:00 [INF] info: 28.06.2025 17:06:23.264 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:06:26.215 +03:00 [INF] info: 28.06.2025 17:06:26.215 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='4'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:06:27.834 +03:00 [INF] info: 28.06.2025 17:06:27.834 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:06:27.866 +03:00 [INF] info: 28.06.2025 17:06:27.866 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:06:29.679 +03:00 [INF] info: 28.06.2025 17:06:29.679 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6,4]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:06:34.818 +03:00 [INF] info: 28.06.2025 17:06:34.818 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6,4]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:06:34.858 +03:00 [INF] info: 28.06.2025 17:06:34.858 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:06:34.885 +03:00 [INF] info: 28.06.2025 17:06:34.885 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='4'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:06:51.978 +03:00 [INF] info: 28.06.2025 17:06:51.978 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (10ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='2578', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T17:06:51.5315480+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 17:06:52.290 +03:00 [INF] info: 28.06.2025 17:06:52.290 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@p0='4', @p1='245', @p2='6', @p3='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 17:06:52.342 +03:00 [INF] info: 28.06.2025 17:06:52.342 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='4', @p1='2333', @p2='4', @p3='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 17:06:52.499 +03:00 [INF] info: 28.06.2025 17:06:52.499 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='4'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:08:12.368 +03:00 [INF] info: 28.06.2025 17:08:12.368 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[]' (Size = 2)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:09:35.403 +03:00 [INF] info: 28.06.2025 17:09:35.403 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "i"."Id", "i"."ApplicationUserId", "i"."Email", "i"."FullName", "i"."InquiryDate", "i"."PhoneNumber"
+      FROM "InquiryHeader" AS "i"
+2025-06-28 17:09:40.845 +03:00 [INF] info: 28.06.2025 17:09:40.845 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "i"."Id", "i"."ApplicationUserId", "i"."Email", "i"."FullName", "i"."InquiryDate", "i"."PhoneNumber"
+      FROM "InquiryHeader" AS "i"
+2025-06-28 17:09:48.602 +03:00 [INF] info: 28.06.2025 17:09:48.602 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:09:48.637 +03:00 [INF] info: 28.06.2025 17:09:48.637 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:09:51.289 +03:00 [INF] info: 28.06.2025 17:09:51.289 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:09:52.869 +03:00 [INF] info: 28.06.2025 17:09:52.869 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:09:52.916 +03:00 [INF] info: 28.06.2025 17:09:52.916 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:09:55.153 +03:00 [INF] info: 28.06.2025 17:09:55.153 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:09:58.549 +03:00 [INF] info: 28.06.2025 17:09:58.549 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:09:58.599 +03:00 [INF] info: 28.06.2025 17:09:58.599 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:18:31.249 +03:00 [INF] warn: 28.06.2025 17:18:31.240 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 17:18:33.417 +03:00 [INF] info: 28.06.2025 17:18:33.417 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:18:33.964 +03:00 [INF] info: 28.06.2025 17:18:33.964 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:18:36.436 +03:00 [INF] info: 28.06.2025 17:18:36.436 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[@__prodInCart_0='[]' (Size = 2)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:18:41.560 +03:00 [INF] info: 28.06.2025 17:18:41.560 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:18:41.596 +03:00 [INF] info: 28.06.2025 17:18:41.596 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:18:44.152 +03:00 [INF] info: 28.06.2025 17:18:44.152 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:18:46.357 +03:00 [INF] info: 28.06.2025 17:18:46.357 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:18:46.390 +03:00 [INF] info: 28.06.2025 17:18:46.390 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:18:49.247 +03:00 [INF] info: 28.06.2025 17:18:49.247 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:18:51.510 +03:00 [INF] info: 28.06.2025 17:18:51.510 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:18:51.552 +03:00 [INF] info: 28.06.2025 17:18:51.552 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:19:47.873 +03:00 [INF] info: 28.06.2025 17:19:47.873 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='NAME@GMAIL.COM' (Size = 14)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Discriminator", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a"."FullName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+      LIMIT 1
+2025-06-28 17:19:48.359 +03:00 [INF] info: 28.06.2025 17:19:48.359 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__user_Id_0='152ce6ed-d046-4041-bdb6-d157fe0767cf' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+      FROM "AspNetUserClaims" AS "a"
+      WHERE "a"."UserId" = @__user_Id_0
+2025-06-28 17:19:48.509 +03:00 [INF] info: 28.06.2025 17:19:48.509 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (8ms) [Parameters=[@__userId_0='152ce6ed-d046-4041-bdb6-d157fe0767cf' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a0"."Name"
+      FROM "AspNetUserRoles" AS "a"
+      INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+      WHERE "a"."UserId" = @__userId_0
+2025-06-28 17:19:48.655 +03:00 [INF] info: 28.06.2025 17:19:48.655 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='ADMIN' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+      FROM "AspNetRoles" AS "a"
+      WHERE "a"."NormalizedName" = @__normalizedName_0
+      LIMIT 1
+2025-06-28 17:19:48.898 +03:00 [INF] info: 28.06.2025 17:19:48.898 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__role_Id_0='0dcc58d7-44ac-4c7c-bd1f-a2f3424effb7' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."ClaimType", "a"."ClaimValue"
+      FROM "AspNetRoleClaims" AS "a"
+      WHERE "a"."RoleId" = @__role_Id_0
+2025-06-28 17:19:49.584 +03:00 [INF] info: 28.06.2025 17:19:49.584 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[]' (Size = 2)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:19:56.229 +03:00 [INF] info: 28.06.2025 17:19:56.229 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:19:56.261 +03:00 [INF] info: 28.06.2025 17:19:56.261 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:19:58.959 +03:00 [INF] info: 28.06.2025 17:19:58.959 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:20:01.335 +03:00 [INF] info: 28.06.2025 17:20:01.335 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:20:01.379 +03:00 [INF] info: 28.06.2025 17:20:01.379 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:20:03.937 +03:00 [INF] info: 28.06.2025 17:20:03.937 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:20:07.620 +03:00 [INF] info: 28.06.2025 17:20:07.620 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:20:07.724 +03:00 [INF] info: 28.06.2025 17:20:07.724 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:24:07.166 +03:00 [INF] warn: 28.06.2025 17:24:07.157 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 17:24:09.345 +03:00 [INF] info: 28.06.2025 17:24:09.345 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:24:09.746 +03:00 [INF] info: 28.06.2025 17:24:09.746 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:24:11.770 +03:00 [INF] info: 28.06.2025 17:24:11.770 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[@__prodInCart_0='[]' (Size = 2)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:24:14.592 +03:00 [INF] info: 28.06.2025 17:24:14.592 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__id_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:24:21.402 +03:00 [INF] info: 28.06.2025 17:24:21.402 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:24:21.519 +03:00 [INF] info: 28.06.2025 17:24:21.519 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:24:23.883 +03:00 [INF] info: 28.06.2025 17:24:23.883 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:24:26.721 +03:00 [INF] info: 28.06.2025 17:24:26.721 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:24:26.774 +03:00 [INF] info: 28.06.2025 17:24:26.774 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:27:54.389 +03:00 [INF] warn: 28.06.2025 17:27:54.379 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 17:27:56.338 +03:00 [INF] info: 28.06.2025 17:27:56.338 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:27:56.864 +03:00 [INF] info: 28.06.2025 17:27:56.863 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:27:57.235 +03:00 [INF] info: 28.06.2025 17:27:57.235 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (8ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:28:00.960 +03:00 [INF] info: 28.06.2025 17:28:00.960 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:28:00.995 +03:00 [INF] info: 28.06.2025 17:28:00.995 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:28:02.432 +03:00 [INF] info: 28.06.2025 17:28:02.432 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:28:07.622 +03:00 [INF] info: 28.06.2025 17:28:07.622 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:28:07.665 +03:00 [INF] info: 28.06.2025 17:28:07.665 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:30:16.493 +03:00 [INF] info: 28.06.2025 17:30:16.493 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:30:16.533 +03:00 [INF] info: 28.06.2025 17:30:16.533 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:33:23.644 +03:00 [INF] warn: 28.06.2025 17:33:23.636 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 17:33:25.175 +03:00 [INF] info: 28.06.2025 17:33:25.175 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:33:25.465 +03:00 [INF] info: 28.06.2025 17:33:25.465 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:33:31.303 +03:00 [INF] info: 28.06.2025 17:33:31.303 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (14ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:33:33.557 +03:00 [INF] info: 28.06.2025 17:33:33.557 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:33:33.651 +03:00 [INF] info: 28.06.2025 17:33:33.651 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:33:36.463 +03:00 [INF] info: 28.06.2025 17:33:36.463 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:33:40.731 +03:00 [INF] info: 28.06.2025 17:33:40.731 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:33:40.773 +03:00 [INF] info: 28.06.2025 17:33:40.773 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:35:59.404 +03:00 [INF] warn: 28.06.2025 17:35:59.394 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 17:36:00.799 +03:00 [INF] info: 28.06.2025 17:36:00.799 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:36:01.086 +03:00 [INF] info: 28.06.2025 17:36:01.086 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:36:23.475 +03:00 [INF] info: 28.06.2025 17:36:23.475 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (14ms) [Parameters=[@__p_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Discriminator", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a"."FullName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."Id" = @__p_0
+      LIMIT 1
+2025-06-28 17:36:23.903 +03:00 [INF] info: 28.06.2025 17:36:23.903 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[@__user_Id_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+      FROM "AspNetUserClaims" AS "a"
+      WHERE "a"."UserId" = @__user_Id_0
+2025-06-28 17:36:24.021 +03:00 [INF] info: 28.06.2025 17:36:24.021 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__userId_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a0"."Name"
+      FROM "AspNetUserRoles" AS "a"
+      INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+      WHERE "a"."UserId" = @__userId_0
+2025-06-28 17:36:24.082 +03:00 [INF] info: 28.06.2025 17:36:24.082 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='ADMIN' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+      FROM "AspNetRoles" AS "a"
+      WHERE "a"."NormalizedName" = @__normalizedName_0
+      LIMIT 1
+2025-06-28 17:36:24.158 +03:00 [INF] info: 28.06.2025 17:36:24.158 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__role_Id_0='0dcc58d7-44ac-4c7c-bd1f-a2f3424effb7' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."ClaimType", "a"."ClaimValue"
+      FROM "AspNetRoleClaims" AS "a"
+      WHERE "a"."RoleId" = @__role_Id_0
+2025-06-28 17:36:24.248 +03:00 [INF] info: 28.06.2025 17:36:24.248 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:36:26.465 +03:00 [INF] info: 28.06.2025 17:36:26.465 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:36:26.508 +03:00 [INF] info: 28.06.2025 17:36:26.508 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:36:28.163 +03:00 [INF] info: 28.06.2025 17:36:28.163 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:36:32.664 +03:00 [INF] info: 28.06.2025 17:36:32.664 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:36:32.707 +03:00 [INF] info: 28.06.2025 17:36:32.707 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:39:05.598 +03:00 [INF] info: 28.06.2025 17:39:05.598 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:39:05.638 +03:00 [INF] info: 28.06.2025 17:39:05.638 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:39:26.102 +03:00 [INF] info: 28.06.2025 17:39:26.102 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:39:26.150 +03:00 [INF] info: 28.06.2025 17:39:26.150 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:39:30.620 +03:00 [INF] info: 28.06.2025 17:39:30.620 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:39:30.654 +03:00 [INF] info: 28.06.2025 17:39:30.654 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:41:08.565 +03:00 [INF] info: 28.06.2025 17:41:08.564 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:41:08.595 +03:00 [INF] info: 28.06.2025 17:41:08.595 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:48:00.327 +03:00 [INF] warn: 28.06.2025 17:48:00.319 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 17:48:02.121 +03:00 [INF] info: 28.06.2025 17:48:02.121 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:48:02.415 +03:00 [INF] info: 28.06.2025 17:48:02.415 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:50:28.909 +03:00 [INF] info: 28.06.2025 17:50:28.909 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (8ms) [Parameters=[@__id_0='4'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:50:31.093 +03:00 [INF] info: 28.06.2025 17:50:31.093 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 17:50:31.134 +03:00 [INF] info: 28.06.2025 17:50:31.134 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 17:50:32.784 +03:00 [INF] info: 28.06.2025 17:50:32.784 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__prodInCart_0='[4]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:50:36.619 +03:00 [INF] info: 28.06.2025 17:50:36.619 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[4]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 17:50:36.667 +03:00 [INF] info: 28.06.2025 17:50:36.667 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='4'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 17:51:01.548 +03:00 [INF] info: 28.06.2025 17:51:01.548 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (13ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='2333', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T17:51:01.1706826+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 17:51:01.680 +03:00 [INF] info: 28.06.2025 17:51:01.680 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@p0='5', @p1='2333', @p2='4', @p3='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 17:51:01.773 +03:00 [INF] info: 28.06.2025 17:51:01.773 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 17:51:14.499 +03:00 [INF] info: 28.06.2025 17:51:14.499 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[]' (Size = 2)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:39:37.720 +03:00 [INF] warn: 28.06.2025 18:39:37.712 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 18:39:39.316 +03:00 [INF] info: 28.06.2025 18:39:39.316 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (30ms) [Parameters=[@__p_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Discriminator", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a"."FullName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."Id" = @__p_0
+      LIMIT 1
+2025-06-28 18:39:39.862 +03:00 [INF] info: 28.06.2025 18:39:39.862 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__user_Id_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+      FROM "AspNetUserClaims" AS "a"
+      WHERE "a"."UserId" = @__user_Id_0
+2025-06-28 18:39:40.141 +03:00 [INF] info: 28.06.2025 18:39:40.141 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (117ms) [Parameters=[@__userId_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a0"."Name"
+      FROM "AspNetUserRoles" AS "a"
+      INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+      WHERE "a"."UserId" = @__userId_0
+2025-06-28 18:39:40.214 +03:00 [INF] info: 28.06.2025 18:39:40.214 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='ADMIN' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+      FROM "AspNetRoles" AS "a"
+      WHERE "a"."NormalizedName" = @__normalizedName_0
+      LIMIT 1
+2025-06-28 18:39:40.323 +03:00 [INF] info: 28.06.2025 18:39:40.323 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__role_Id_0='0dcc58d7-44ac-4c7c-bd1f-a2f3424effb7' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."ClaimType", "a"."ClaimValue"
+      FROM "AspNetRoleClaims" AS "a"
+      WHERE "a"."RoleId" = @__role_Id_0
+2025-06-28 18:39:40.524 +03:00 [INF] info: 28.06.2025 18:39:40.524 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 18:39:40.708 +03:00 [INF] info: 28.06.2025 18:39:40.708 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 18:39:56.902 +03:00 [INF] info: 28.06.2025 18:39:56.902 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 18:40:01.942 +03:00 [INF] info: 28.06.2025 18:40:01.942 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 18:40:01.985 +03:00 [INF] info: 28.06.2025 18:40:01.985 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 18:40:03.525 +03:00 [INF] info: 28.06.2025 18:40:03.525 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:40:10.137 +03:00 [INF] info: 28.06.2025 18:40:10.136 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:40:10.190 +03:00 [INF] info: 28.06.2025 18:40:10.190 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 18:40:39.214 +03:00 [INF] info: 28.06.2025 18:40:39.214 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='1740', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T18:40:38.7668614+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 18:40:39.350 +03:00 [INF] info: 28.06.2025 18:40:39.350 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='6', @p1='435', @p2='5', @p3='4'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 18:42:09.389 +03:00 [INF] warn: 28.06.2025 18:42:09.380 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 18:42:11.342 +03:00 [INF] info: 28.06.2025 18:42:11.342 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (60ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 18:42:11.898 +03:00 [INF] info: 28.06.2025 18:42:11.898 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 18:42:14.268 +03:00 [INF] info: 28.06.2025 18:42:14.268 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (14ms) [Parameters=[@__prodInCart_0='[]' (Size = 2)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:42:17.631 +03:00 [INF] info: 28.06.2025 18:42:17.631 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:42:23.623 +03:00 [INF] info: 28.06.2025 18:42:23.623 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 18:42:50.299 +03:00 [INF] info: 28.06.2025 18:42:50.299 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='1740', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T18:42:49.9839139+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 18:42:50.561 +03:00 [INF] info: 28.06.2025 18:42:50.561 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@p0='7', @p1='435', @p2='5', @p3='4'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 18:55:51.140 +03:00 [INF] warn: 28.06.2025 18:55:51.130 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 18:55:52.901 +03:00 [INF] info: 28.06.2025 18:55:52.901 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 18:55:53.440 +03:00 [INF] info: 28.06.2025 18:55:53.439 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 18:55:53.882 +03:00 [INF] info: 28.06.2025 18:55:53.882 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (8ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 18:55:59.573 +03:00 [INF] info: 28.06.2025 18:55:59.573 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 18:55:59.616 +03:00 [INF] info: 28.06.2025 18:55:59.616 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 18:56:01.923 +03:00 [INF] info: 28.06.2025 18:56:01.923 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:56:06.661 +03:00 [INF] info: 28.06.2025 18:56:06.661 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:56:06.699 +03:00 [INF] info: 28.06.2025 18:56:06.699 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 18:56:26.582 +03:00 [INF] info: 28.06.2025 18:56:26.582 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='2175', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T18:56:26.0983386+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 18:56:26.788 +03:00 [INF] info: 28.06.2025 18:56:26.788 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='8', @p1='435', @p2='5', @p3='5'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 18:58:10.215 +03:00 [INF] warn: 28.06.2025 18:58:10.206 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 18:58:12.164 +03:00 [INF] info: 28.06.2025 18:58:12.164 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 18:58:12.570 +03:00 [INF] info: 28.06.2025 18:58:12.570 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 18:58:20.986 +03:00 [INF] info: 28.06.2025 18:58:20.986 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[@__id_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 18:58:34.403 +03:00 [INF] info: 28.06.2025 18:58:34.403 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 18:58:34.440 +03:00 [INF] info: 28.06.2025 18:58:34.440 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 18:58:41.073 +03:00 [INF] info: 28.06.2025 18:58:41.073 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:58:45.796 +03:00 [INF] info: 28.06.2025 18:58:45.796 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 18:58:45.919 +03:00 [INF] info: 28.06.2025 18:58:45.919 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 18:59:05.587 +03:00 [INF] info: 28.06.2025 18:59:05.587 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='1225', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T18:59:05.0634714+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 18:59:05.823 +03:00 [INF] info: 28.06.2025 18:59:05.823 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='9', @p1='245', @p2='6', @p3='5'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:09:07.197 +03:00 [INF] warn: 28.06.2025 19:09:07.190 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 19:09:08.767 +03:00 [INF] info: 28.06.2025 19:09:08.767 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:09:09.024 +03:00 [INF] info: 28.06.2025 19:09:09.024 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:09:12.739 +03:00 [INF] info: 28.06.2025 19:09:12.739 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:09:20.480 +03:00 [INF] info: 28.06.2025 19:09:20.480 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:09:20.543 +03:00 [INF] info: 28.06.2025 19:09:20.543 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:09:23.649 +03:00 [INF] info: 28.06.2025 19:09:23.649 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='9'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:09:30.652 +03:00 [INF] info: 28.06.2025 19:09:30.652 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:09:30.744 +03:00 [INF] info: 28.06.2025 19:09:30.744 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:09:32.349 +03:00 [INF] info: 28.06.2025 19:09:32.349 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__prodInCart_0='[5,9]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:09:36.630 +03:00 [INF] info: 28.06.2025 19:09:36.630 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5,9]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:09:36.674 +03:00 [INF] info: 28.06.2025 19:09:36.674 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:09:36.715 +03:00 [INF] info: 28.06.2025 19:09:36.715 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='9'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:09:58.555 +03:00 [INF] info: 28.06.2025 19:09:58.555 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[@__p_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Discriminator", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a"."FullName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."Id" = @__p_0
+      LIMIT 1
+2025-06-28 19:09:58.878 +03:00 [INF] info: 28.06.2025 19:09:58.878 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__user_Id_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+      FROM "AspNetUserClaims" AS "a"
+      WHERE "a"."UserId" = @__user_Id_0
+2025-06-28 19:09:59.062 +03:00 [INF] info: 28.06.2025 19:09:59.062 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__userId_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a0"."Name"
+      FROM "AspNetUserRoles" AS "a"
+      INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+      WHERE "a"."UserId" = @__userId_0
+2025-06-28 19:09:59.166 +03:00 [INF] info: 28.06.2025 19:09:59.166 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='ADMIN' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+      FROM "AspNetRoles" AS "a"
+      WHERE "a"."NormalizedName" = @__normalizedName_0
+      LIMIT 1
+2025-06-28 19:09:59.282 +03:00 [INF] info: 28.06.2025 19:09:59.282 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__role_Id_0='0dcc58d7-44ac-4c7c-bd1f-a2f3424effb7' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."ClaimType", "a"."ClaimValue"
+      FROM "AspNetRoleClaims" AS "a"
+      WHERE "a"."RoleId" = @__role_Id_0
+2025-06-28 19:10:00.104 +03:00 [INF] info: 28.06.2025 19:10:00.104 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='2870', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T19:09:59.3862271+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 19:10:00.292 +03:00 [INF] info: 28.06.2025 19:10:00.292 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='10', @p1='435', @p2='5', @p3='2'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:10:00.353 +03:00 [INF] info: 28.06.2025 19:10:00.353 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='10', @p1='500', @p2='9', @p3='4'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:14:01.401 +03:00 [INF] info: 28.06.2025 19:14:01.401 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='2870', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T19:14:01.2556069+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 19:14:01.470 +03:00 [INF] info: 28.06.2025 19:14:01.470 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@p0='11', @p1='435', @p2='5', @p3='2'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:14:01.510 +03:00 [INF] info: 28.06.2025 19:14:01.510 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='11', @p1='500', @p2='9', @p3='4'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:18:51.601 +03:00 [INF] info: 28.06.2025 19:18:51.601 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='2870', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T19:18:51.5140677+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 19:18:51.695 +03:00 [INF] info: 28.06.2025 19:18:51.695 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='12', @p1='435', @p2='5', @p3='2'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:18:51.740 +03:00 [INF] info: 28.06.2025 19:18:51.740 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='12', @p1='500', @p2='9', @p3='4'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:26:56.894 +03:00 [INF] warn: 28.06.2025 19:26:56.883 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 19:26:58.518 +03:00 [INF] info: 28.06.2025 19:26:58.518 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:26:58.876 +03:00 [INF] info: 28.06.2025 19:26:58.876 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:27:11.593 +03:00 [INF] info: 28.06.2025 19:27:11.593 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (11ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='2870', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T19:27:11.1079378+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 19:27:11.777 +03:00 [INF] info: 28.06.2025 19:27:11.777 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@p0='13', @p1='435', @p2='5', @p3='2'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:27:11.824 +03:00 [INF] info: 28.06.2025 19:27:11.824 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='13', @p1='500', @p2='9', @p3='4'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:30:18.769 +03:00 [INF] info: 28.06.2025 19:30:18.769 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p1='13', @p0='Cancelled' (Nullable = false) (Size = 9)], CommandType='Text', CommandTimeout='30']
+      UPDATE "OrderHeader" SET "OrderStatus" = @p0
+      WHERE "Id" = @p1
+      RETURNING 1;
+2025-06-28 19:30:28.624 +03:00 [INF] info: 28.06.2025 19:30:28.624 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='13'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:33:37.767 +03:00 [INF] info: 28.06.2025 19:33:37.767 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:33:37.802 +03:00 [INF] info: 28.06.2025 19:33:37.802 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:33:40.289 +03:00 [INF] info: 28.06.2025 19:33:40.289 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:33:51.620 +03:00 [INF] info: 28.06.2025 19:33:51.620 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:33:51.660 +03:00 [INF] info: 28.06.2025 19:33:51.660 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:33:55.024 +03:00 [INF] info: 28.06.2025 19:33:55.024 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:33:58.900 +03:00 [INF] info: 28.06.2025 19:33:58.900 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:33:58.939 +03:00 [INF] info: 28.06.2025 19:33:58.939 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:34:01.991 +03:00 [INF] info: 28.06.2025 19:34:01.991 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='8'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:34:07.855 +03:00 [INF] info: 28.06.2025 19:34:07.855 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:34:07.894 +03:00 [INF] info: 28.06.2025 19:34:07.894 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:34:11.170 +03:00 [INF] info: 28.06.2025 19:34:11.170 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6,8]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:34:16.990 +03:00 [INF] info: 28.06.2025 19:34:16.989 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6,8]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:34:17.029 +03:00 [INF] info: 28.06.2025 19:34:17.029 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:34:17.062 +03:00 [INF] info: 28.06.2025 19:34:17.062 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='8'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:34:39.661 +03:00 [INF] fail: 28.06.2025 19:34:39.661 RelationalEventId.CommandError[20102] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Failed executing DbCommand (221ms) [Parameters=[@p0=NULL (Nullable = false), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2=NULL (Nullable = false), @p3='2970', @p4=NULL (Nullable = false), @p5='2025-06-28T19:34:39.3708478+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8=NULL (Nullable = false), @p9=NULL (Nullable = false), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11=NULL (Nullable = false), @p12=NULL (Nullable = false), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 19:34:40.203 +03:00 [INF] fail: 28.06.2025 19:34:40.203 CoreEventId.SaveChangesFailed[10000] (Microsoft.EntityFrameworkCore.Update) 
+      An exception occurred in the database while saving changes for context type 'Rocky_DataAccess.ApplicationDbContext'.
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'NOT NULL constraint failed: OrderHeader.City'.
+         at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+         at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+         at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+         at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+         at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+         at Microsoft.EntityFrameworkCore.Storage.NonRetryingExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2025-06-28 19:34:49.207 +03:00 [INF] info: 28.06.2025 19:34:49.207 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6,8]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:34:49.257 +03:00 [INF] info: 28.06.2025 19:34:49.257 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:34:49.297 +03:00 [INF] info: 28.06.2025 19:34:49.297 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='8'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:34:53.538 +03:00 [INF] info: 28.06.2025 19:34:53.538 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6,8]' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:34:53.612 +03:00 [INF] info: 28.06.2025 19:34:53.612 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:34:53.649 +03:00 [INF] info: 28.06.2025 19:34:53.649 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='8'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:35:13.836 +03:00 [INF] info: 28.06.2025 19:35:13.836 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='2970', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T19:35:13.7803033+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 19:35:13.890 +03:00 [INF] info: 28.06.2025 19:35:13.890 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='14', @p1='245', @p2='6', @p3='6'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:35:13.940 +03:00 [INF] info: 28.06.2025 19:35:13.940 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='14', @p1='375', @p2='8', @p3='4'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:35:21.005 +03:00 [INF] info: 28.06.2025 19:35:21.005 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p1='14', @p0='Cancelled' (Nullable = false) (Size = 9)], CommandType='Text', CommandTimeout='30']
+      UPDATE "OrderHeader" SET "OrderStatus" = @p0
+      WHERE "Id" = @p1
+      RETURNING 1;
+2025-06-28 19:35:21.065 +03:00 [INF] info: 28.06.2025 19:35:21.065 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:39:01.630 +03:00 [INF] warn: 28.06.2025 19:39:01.621 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 19:39:02.921 +03:00 [INF] info: 28.06.2025 19:39:02.921 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:39:03.247 +03:00 [INF] info: 28.06.2025 19:39:03.247 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:39:07.988 +03:00 [INF] info: 28.06.2025 19:39:07.988 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[@__id_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:39:09.733 +03:00 [INF] info: 28.06.2025 19:39:09.733 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:39:09.766 +03:00 [INF] info: 28.06.2025 19:39:09.766 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:39:11.813 +03:00 [INF] info: 28.06.2025 19:39:11.813 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:39:15.902 +03:00 [INF] info: 28.06.2025 19:39:15.902 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:39:15.938 +03:00 [INF] info: 28.06.2025 19:39:15.937 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 19:39:33.952 +03:00 [INF] info: 28.06.2025 19:39:33.952 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='245', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T19:39:33.5443364+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 19:39:34.163 +03:00 [INF] info: 28.06.2025 19:39:34.163 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='15', @p1='245', @p2='6', @p3='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 19:39:35.831 +03:00 [INF] info: 28.06.2025 19:39:35.831 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p2='15', @p0='Approved' (Nullable = false) (Size = 8), @p1='8b69qpb5' (Size = 8)], CommandType='Text', CommandTimeout='30']
+      UPDATE "OrderHeader" SET "OrderStatus" = @p0, "TransactionId" = @p1
+      WHERE "Id" = @p2
+      RETURNING 1;
+2025-06-28 19:39:35.897 +03:00 [INF] info: 28.06.2025 19:39:35.897 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='15'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:53:13.747 +03:00 [INF] warn: 28.06.2025 19:53:13.717 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 19:53:16.138 +03:00 [INF] info: 28.06.2025 19:53:16.138 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (65ms) [Parameters=[@__p_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Discriminator", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a"."FullName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."Id" = @__p_0
+      LIMIT 1
+2025-06-28 19:53:16.671 +03:00 [INF] info: 28.06.2025 19:53:16.670 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__user_Id_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+      FROM "AspNetUserClaims" AS "a"
+      WHERE "a"."UserId" = @__user_Id_0
+2025-06-28 19:53:16.870 +03:00 [INF] info: 28.06.2025 19:53:16.870 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (7ms) [Parameters=[@__userId_0='2df3ed2c-62eb-4101-b55b-9375f095b340' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a0"."Name"
+      FROM "AspNetUserRoles" AS "a"
+      INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+      WHERE "a"."UserId" = @__userId_0
+2025-06-28 19:53:17.134 +03:00 [INF] info: 28.06.2025 19:53:17.134 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='ADMIN' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+      FROM "AspNetRoles" AS "a"
+      WHERE "a"."NormalizedName" = @__normalizedName_0
+      LIMIT 1
+2025-06-28 19:53:17.299 +03:00 [INF] info: 28.06.2025 19:53:17.299 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__role_Id_0='0dcc58d7-44ac-4c7c-bd1f-a2f3424effb7' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."ClaimType", "a"."ClaimValue"
+      FROM "AspNetRoleClaims" AS "a"
+      WHERE "a"."RoleId" = @__role_Id_0
+2025-06-28 19:53:17.532 +03:00 [INF] info: 28.06.2025 19:53:17.532 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:53:17.815 +03:00 [INF] info: 28.06.2025 19:53:17.815 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:54:00.815 +03:00 [INF] info: 28.06.2025 19:54:00.815 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__id_0='5'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:54:03.112 +03:00 [INF] info: 28.06.2025 19:54:03.112 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:54:03.155 +03:00 [INF] info: 28.06.2025 19:54:03.155 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:54:06.052 +03:00 [INF] info: 28.06.2025 19:54:06.052 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='11'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 19:54:07.619 +03:00 [INF] info: 28.06.2025 19:54:07.619 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:54:07.647 +03:00 [INF] info: 28.06.2025 19:54:07.647 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:54:09.598 +03:00 [INF] info: 28.06.2025 19:54:09.598 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[5,11]' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 19:54:12.172 +03:00 [INF] info: 28.06.2025 19:54:12.172 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:54:12.235 +03:00 [INF] info: 28.06.2025 19:54:12.235 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 19:59:18.971 +03:00 [INF] warn: 28.06.2025 19:59:18.963 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-28 19:59:20.511 +03:00 [INF] info: 28.06.2025 19:59:20.511 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 19:59:20.901 +03:00 [INF] info: 28.06.2025 19:59:20.901 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:00:21.887 +03:00 [INF] info: 28.06.2025 20:00:21.887 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[@__id_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:00:23.730 +03:00 [INF] info: 28.06.2025 20:00:23.730 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 20:00:23.771 +03:00 [INF] info: 28.06.2025 20:00:23.771 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:00:25.264 +03:00 [INF] info: 28.06.2025 20:00:25.264 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 20:00:30.049 +03:00 [INF] info: 28.06.2025 20:00:30.049 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[6]' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 20:00:30.081 +03:00 [INF] info: 28.06.2025 20:00:30.081 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='6'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 20:00:50.622 +03:00 [INF] info: 28.06.2025 20:00:50.622 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='245', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T20:00:50.1680825+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 20:00:50.941 +03:00 [INF] info: 28.06.2025 20:00:50.940 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='16', @p1='245', @p2='6', @p3='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 20:00:52.501 +03:00 [INF] info: 28.06.2025 20:00:52.501 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p2='16', @p0='Approved' (Nullable = false) (Size = 8), @p1='5g68zpct' (Size = 8)], CommandType='Text', CommandTimeout='30']
+      UPDATE "OrderHeader" SET "OrderStatus" = @p0, "TransactionId" = @p1
+      WHERE "Id" = @p2
+      RETURNING 1;
+2025-06-28 20:00:52.588 +03:00 [INF] info: 28.06.2025 20:00:52.587 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='16'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:01:44.243 +03:00 [INF] info: 28.06.2025 20:01:44.243 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 20:01:44.286 +03:00 [INF] info: 28.06.2025 20:01:44.286 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:01:47.021 +03:00 [INF] info: 28.06.2025 20:01:47.021 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='11'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:01:51.661 +03:00 [INF] info: 28.06.2025 20:01:51.661 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 20:01:51.697 +03:00 [INF] info: 28.06.2025 20:01:51.697 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:01:54.984 +03:00 [INF] info: 28.06.2025 20:01:54.984 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='9'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:01:57.977 +03:00 [INF] info: 28.06.2025 20:01:57.977 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 20:01:58.016 +03:00 [INF] info: 28.06.2025 20:01:58.016 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:01:59.952 +03:00 [INF] info: 28.06.2025 20:01:59.952 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[11,9]' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 20:02:02.963 +03:00 [INF] info: 28.06.2025 20:02:02.963 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[11,9]' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 20:02:03.010 +03:00 [INF] info: 28.06.2025 20:02:03.010 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='11'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 20:02:03.049 +03:00 [INF] info: 28.06.2025 20:02:03.049 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='9'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 20:02:19.619 +03:00 [INF] info: 28.06.2025 20:02:19.619 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='69825', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T20:02:19.5585045+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 20:02:19.745 +03:00 [INF] info: 28.06.2025 20:02:19.745 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@p0='17', @p1='555', @p2='11', @p3='115'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 20:02:19.832 +03:00 [INF] info: 28.06.2025 20:02:19.832 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='17', @p1='500', @p2='9', @p3='12'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 20:02:21.584 +03:00 [INF] info: 28.06.2025 20:02:21.584 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p2='17', @p0='Approved' (Nullable = false) (Size = 8), @p1='c73681wy' (Size = 8)], CommandType='Text', CommandTimeout='30']
+      UPDATE "OrderHeader" SET "OrderStatus" = @p0, "TransactionId" = @p1
+      WHERE "Id" = @p2
+      RETURNING 1;
+2025-06-28 20:02:21.639 +03:00 [INF] info: 28.06.2025 20:02:21.639 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='17'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:05:30.995 +03:00 [INF] info: 28.06.2025 20:05:30.995 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 20:05:31.053 +03:00 [INF] info: 28.06.2025 20:05:31.053 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:05:33.863 +03:00 [INF] info: 28.06.2025 20:05:33.863 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='7'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:05:38.099 +03:00 [INF] info: 28.06.2025 20:05:38.099 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 20:05:38.147 +03:00 [INF] info: 28.06.2025 20:05:38.147 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:05:41.441 +03:00 [INF] info: 28.06.2025 20:05:41.441 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='11'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:05:45.820 +03:00 [INF] info: 28.06.2025 20:05:45.820 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 20:05:45.855 +03:00 [INF] info: 28.06.2025 20:05:45.855 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:06:12.060 +03:00 [INF] info: 28.06.2025 20:06:12.060 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='11'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:06:18.155 +03:00 [INF] info: 28.06.2025 20:06:18.155 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+      WHERE "p"."Id" = @__id_0
+      LIMIT 1
+2025-06-28 20:06:22.542 +03:00 [INF] info: 28.06.2025 20:06:22.542 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc", "c"."Id", "c"."DisplayOrder", "c"."Name", "a"."Id", "a"."Name"
+      FROM "Product" AS "p"
+      INNER JOIN "Category" AS "c" ON "p"."CategoryId" = "c"."Id"
+      INNER JOIN "ApplicationType" AS "a" ON "p"."ApplicationTypeId" = "a"."Id"
+2025-06-28 20:06:22.581 +03:00 [INF] info: 28.06.2025 20:06:22.581 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."DisplayOrder", "c"."Name"
+      FROM "Category" AS "c"
+2025-06-28 20:06:24.964 +03:00 [INF] info: 28.06.2025 20:06:24.964 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__prodInCart_0='[7,11,14]' (Size = 9)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 20:06:32.338 +03:00 [INF] info: 28.06.2025 20:06:32.338 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__prodInCart_0='[7,11,14]' (Size = 9)], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" IN (
+          SELECT "p0"."value"
+          FROM json_each(@__prodInCart_0) AS "p0"
+      )
+2025-06-28 20:06:32.378 +03:00 [INF] info: 28.06.2025 20:06:32.378 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='7'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 20:06:32.426 +03:00 [INF] info: 28.06.2025 20:06:32.426 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='11'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 20:06:32.464 +03:00 [INF] info: 28.06.2025 20:06:32.464 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__cartObj_ProductId_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT "p"."Id", "p"."ApplicationTypeId", "p"."CategoryId", "p"."Description", "p"."Image", "p"."Name", "p"."Price", "p"."ShortDesc"
+      FROM "Product" AS "p"
+      WHERE "p"."Id" = @__cartObj_ProductId_0
+      LIMIT 1
+2025-06-28 20:06:50.715 +03:00 [INF] info: 28.06.2025 20:06:50.715 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='las' (Nullable = false) (Size = 3), @p1='2df3ed2c-62eb-4101-b55b-9375f095b340' (Nullable = false) (Size = 36), @p2='name@gmail.com' (Nullable = false) (Size = 14), @p3='16243', @p4='dsaddasd' (Nullable = false) (Size = 8), @p5='2025-06-28T20:06:50.6488712+03:00' (DbType = DateTime), @p6='Pending' (Nullable = false) (Size = 7), @p7='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p8='442822' (Nullable = false) (Size = 6), @p9='224032' (Nullable = false) (Size = 6), @p10='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p11='vegas' (Nullable = false) (Size = 5), @p12='128 avenue' (Nullable = false) (Size = 10), @p13=NULL], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderHeader" ("City", "CreatedByUserId", "Email", "FinalOrderTotal", "FullName", "OrderDate", "OrderStatus", "PaymentDate", "PhoneNumber", "PostalCode", "ShippingDate", "State", "StreetAddress", "TransactionId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "Id";
+2025-06-28 20:06:50.793 +03:00 [INF] info: 28.06.2025 20:06:50.793 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='18', @p1='602', @p2='7', @p3='14'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 20:06:50.852 +03:00 [INF] info: 28.06.2025 20:06:50.852 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='18', @p1='555', @p2='11', @p3='11'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 20:06:50.940 +03:00 [INF] info: 28.06.2025 20:06:50.940 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='18', @p1='342', @p2='14', @p3='5'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OrderDetail" ("OrderHeaderId", "PricePerSqFt", "ProductId", "Sqft")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+2025-06-28 20:06:52.503 +03:00 [INF] info: 28.06.2025 20:06:52.503 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p2='18', @p0='Approved' (Nullable = false) (Size = 8), @p1='gc5jyjvz' (Size = 8)], CommandType='Text', CommandTimeout='30']
+      UPDATE "OrderHeader" SET "OrderStatus" = @p0, "TransactionId" = @p1
+      WHERE "Id" = @p2
+      RETURNING 1;
+2025-06-28 20:06:52.556 +03:00 [INF] info: 28.06.2025 20:06:52.556 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__id_0='18'], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."City", "o"."CreatedByUserId", "o"."Email", "o"."FinalOrderTotal", "o"."FullName", "o"."OrderDate", "o"."OrderStatus", "o"."PaymentDate", "o"."PhoneNumber", "o"."PostalCode", "o"."ShippingDate", "o"."State", "o"."StreetAddress", "o"."TransactionId"
+      FROM "OrderHeader" AS "o"
+      WHERE "o"."Id" = @__id_0
+      LIMIT 1

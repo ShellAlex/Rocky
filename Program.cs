@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Rocky_DataAccess.Repository.IRepository;
 using Rocky_DataAccess.Repository;
 using Serilog;
+using Rocky_Utility.BrainTree;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//public IConfiguration Configuration{get;}
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.File("Logs/efcore-log-.txt", rollingInterval: RollingInterval.Day)
@@ -35,12 +37,19 @@ builder.Services.AddSession(Options =>
     Options.IdleTimeout = TimeSpan.FromMinutes(30); 
     Options.IOTimeout = TimeSpan.FromMinutes(30); 
 });
+
+builder.Services.Configure<BrainTreeSettings>(builder.Configuration.GetSection("Braintree"));
+builder.Services.AddSingleton<IBrainTreeGate,BrainTreeGate>();
+
 builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
 builder.Services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
 builder.Services.AddScoped<IApplicationTypeRepository,ApplicationTypeRepository>();
 builder.Services.AddScoped<IProductRepository,ProductRepository>();
 builder.Services.AddScoped<IInquiryHeaderRepository,InquiryHeaderRepository>();
 builder.Services.AddScoped<IInquiryDetailRepository,InquiryDetailRepository>();
+
+builder.Services.AddScoped<IOrderHeaderRepository,OrderHeaderRepository>();
+builder.Services.AddScoped<IOrderDetailRepository,OrderDetailRepository>();
 
 builder.Services.AddControllersWithViews();
 

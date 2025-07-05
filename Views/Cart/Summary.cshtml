@@ -1,6 +1,6 @@
 @model Rocky_Models.ViewModels.ProductUserVM
 
-<form method="post">
+<form method="post" id="payment-form">
     <br />
     <div class="backgroundWhiteBorder">
         <div class="container">
@@ -37,7 +37,7 @@
                                         <label>Phone</label>
                                     </div>
                                     <div class="col-9">
-                                         <input asp-for="ApplicationUser.PhoneNumber" type="text" class="form-control" />
+                                         <input asp-for="ApplicationUser.PhoneNumber" required type="text" class="form-control" />
                                         <span asp-validation-for="ApplicationUser.PhoneNumber"></span>
                                     </div>
                                 </div>
@@ -46,13 +46,53 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="col-9">
-                                         <input asp-for="ApplicationUser.Email" type="text" class="form-control" />
+                                         <input asp-for="ApplicationUser.Email" required type="text" class="form-control" />
                                         <span asp-validation-for="ApplicationUser.Email"></span>
                                     </div>
                                 </div>
+                                @if(User.IsInRole(Rocky_Utility.WC.AdminRole)){
+                                    <div class="row my-1">
+                                    <div class="col-3">
+                                        <label>Street Address</label>
+                                    </div>
+                                    <div class="col-9">
+                                         <input asp-for="ApplicationUser.StreetAddress" type="text" class="form-control" />
+                                        <span asp-validation-for="ApplicationUser.StreetAddress"></span>
+                                    </div>
+                                </div>
+                                <div class="row my-1">
+                                    <div class="col-3">
+                                        <label>City</label>
+                                    </div>
+                                    <div class="col-9">
+                                         <input asp-for="ApplicationUser.City" type="text" class="form-control" />
+                                        <span asp-validation-for="ApplicationUser.City"></span>
+                                    </div>
+                                </div>
+                                <div class="row my-1">
+                                    <div class="col-3">
+                                        <label>State</label>
+                                    </div>
+                                    <div class="col-9">
+                                         <input asp-for="ApplicationUser.State" type="text" class="form-control" />
+                                        <span asp-validation-for="ApplicationUser.State"></span>
+                                    </div>
+                                </div>
+                                <div class="row my-1">
+                                    <div class="col-3">
+                                        <label>Postal Code</label>
+                                    </div>
+                                    <div class="col-9">
+                                         <input asp-for="ApplicationUser.PostalCode" type="text" class="form-control" />
+                                        <span asp-validation-for="ApplicationUser.PostalCode"></span>
+                                    </div>
+                                </div>
+                                }
                             </div>
                             <div class="col-12 col-lg-5 row">
+
                                 <div class="col-12">
+
                                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                                         <span class="text-info">Order Summary:</span>
                                     </h4>
@@ -61,6 +101,8 @@
                                         @for(int i=0; i<Model.ProductList.Count(); i++){
                                             <input type="hidden" asp-for="@Model.ProductList[i].Id"/>
                                             <input type="hidden" asp-for="@Model.ProductList[i].Name"/>
+                                            <input type="hidden" asp-for="@Model.ProductList[i].Price"/>
+                                            <input type="hidden" asp-for="@Model.ProductList[i].TempSqFt"/>
                                         <li class="list-group-item d-flex justify-content-between">
                                             <div>
                                                 <h6 class="my-0">@Model.ProductList[i].Name</h6>
@@ -83,7 +125,18 @@
                                             </li>
                                         }
                                     </ul>
-                                </div>
+                               
+                               @if(User.IsInRole(Rocky_Utility.WC.AdminRole)){
+                                <div class="col-12 ">
+                                    <div class="wrapper">
+                                        <div class=" container">
+                                           <div id="dropin-container"></div>
+                                                <input id="nonce" name="payment_method_nonce" type="hidden"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                               } </div>
                             </div>
                         </div>
                     </div>
@@ -91,7 +144,11 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-12 col-md-5 offset-md-7">
-                            <button type="submit" class="btn btn-primary form-control">Submit Inquiry</button>
+                            @if(User.IsInRole(Rocky_Utility.WC.AdminRole)){
+                                <button  class="btn btn-succcess form-control"  id="submit-button">Submit Order</button>
+                            }else{
+                                <button type="submit" class="btn btn-primary form-control">Submit Inquiry</button>
+                            }
                         </div>
                     </div>
                 </div>
@@ -100,7 +157,37 @@
     </div>
 </form>
 
-
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />
+    <script src="https://js.braintreegateway.com/web/dropin/1.45.0/js/dropin.min.js"></script>
+    <script>
+        <!-- Step one: add an empty container to your page -->
+        var client_token = "@ViewBag.ClientToken";
+        const form = document.getElementById('payment-form');
+
+        braintree.dropin.create({
+            authorization: client_token,
+            container: '#dropin-container'
+        }, (error, dropinInstance) => {
+            if (error) console.error(error);
+
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                dropinInstance.requestPaymentMethod((error, payload) => {
+                    if (error) console.error(error);
+                    // Step four: when the user is ready to complete their
+                    // transaction, use the dropinInstance to get a payment
+                    // method nonce for the user's selected payment method,
+                    // then add it a the hidden field before submitting the
+                    // complete form to a server-side integration
+                    document.getElementById('nonce').value = payload.nonce;
+                    form.submit();
+                });
+            });
+        });
+  
+</script>
+  <script type="text/javascript">
+    // call 'braintree.dropin.create' code here
+  </script>
 }
